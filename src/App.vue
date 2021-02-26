@@ -1,19 +1,18 @@
 <template>
   <v-app>
-    <!-- <div id="nav">
-      <router-link to="/">Home</router-link> |
-      <router-link to="/about">About</router-link>
-    </div> -->
-    <top-nav></top-nav>
+    <the-navigation></the-navigation>
     <router-view />
+    <the-footer></the-footer>
   </v-app>
 </template>
 
 <script>
-import TopNav from '@/components/nav/TopNav.vue';
+import TheNavigation from '@/components/nav/TheNavigation.vue';
+import TheFooter from '@/components/nav/TheFooter.vue';
 export default {
   components: {
-    TopNav,
+    TheFooter,
+    TheNavigation,
   },
 };
 </script>
