@@ -1,11 +1,11 @@
 <template>
-  <v-sheet :height="sheetHeight" color="red">
+  <v-sheet :height="sheetHeight" color="amber lighten-1">
     <v-container class="fill-height">
       <v-row align="center" justify="center">
         <h1 class="text-center display-3 hidden-xs-only">
           Welcome to the Go Organic's Shop
         </h1>
-        <h1 class="text-center display-2 hidden-sm-and-up">
+        <h1 class="text-center display-2 font-weight-light hidden-sm-and-up">
           Welcome to the Go Organic's Shop
         </h1>
       </v-row>
