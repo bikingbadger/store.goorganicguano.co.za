@@ -12,16 +12,6 @@
 <script>
 import TopNav from '@/components/nav/TopNav.vue';
 export default {
-  data() {
-    return {
-      drawer: false,
-      items: [
-        { title: 'Home', link: '/', icon: 'home' },
-        { title: 'Store', link: 'store', icon: 'shopping-basket' },
-        { title: 'Cart', link: 'cart', icon: 'shopping-cart' },
-      ],
-    };
-  },
   components: {
     TopNav,
   },
