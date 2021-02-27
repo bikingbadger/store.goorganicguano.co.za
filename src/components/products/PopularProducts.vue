@@ -15,11 +15,30 @@
     <v-row>
       <v-col sm="10" offset-sm="1" md="8" offset-md="2">
         <v-row>
-          <v-col sm="6" md="4">
-              Card
+          <v-col
+            sm="6"
+            md="4"
+            v-for="product in popularProducts"
+            :key="product.id"
+          >
+            <product-card :product="product"></product-card>
           </v-col>
         </v-row>
       </v-col>
     </v-row>
   </v-container>
 </template>
+
+<script>
+import { mapGetters } from 'vuex';
+import ProductCard from '@/components/products/ProductCard.vue';
+
+export default {
+  components: {
+    ProductCard,
+  },
+  computed: {
+    ...mapGetters('products', ['popularProducts']),
+  },
+};
+</script>

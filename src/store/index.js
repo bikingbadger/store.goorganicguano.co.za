@@ -10,7 +10,7 @@ Vue.use(Vuex);
 /* eslint-disable no-new */
 const store = new Vuex.Store({
   plugins: [createPersistedState()],
-  modules: { ProductsModule },
+  modules: { products: ProductsModule },
 });
 
 export default store;
