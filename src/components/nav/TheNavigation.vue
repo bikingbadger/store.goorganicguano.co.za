@@ -1,6 +1,6 @@
 <template>
   <div>
-    <v-app-bar color="green">
+    <v-app-bar color="green" >
       <v-toolbar-title>Go Organic Guano</v-toolbar-title>
       <v-spacer></v-spacer>
 

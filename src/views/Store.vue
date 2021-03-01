@@ -1,5 +1,5 @@
 <template>
-  <all-products />
+  <v-container><all-products /></v-container>
 </template>
 
 <script>
