@@ -21,7 +21,7 @@
             v-for="product in popularProducts"
             :key="product.id"
           >
-            <product-card :product="product"></product-card>
+            <product-card :product="product" @add="addToCart"></product-card>
           </v-col>
         </v-row>
       </v-col>
@@ -30,7 +30,7 @@
 </template>
 
 <script>
-import { mapGetters } from 'vuex';
+import { mapGetters, mapActions } from 'vuex';
 import ProductCard from '@/components/products/ProductCard.vue';
 
 export default {
@@ -39,6 +39,14 @@ export default {
   },
   computed: {
     ...mapGetters('products', ['popularProducts']),
+  },
+  methods: {
+    ...mapActions('cart', ['addItemToCart']),
+    ...mapActions('snackbar', ['setVisible']),
+    addToCart(cartItem) {
+      this.addItemToCart(cartItem);
+      this.setVisible(true);
+    },
   },
 };
 </script>

@@ -4,7 +4,7 @@
     <v-card-title>{{ product.name }}</v-card-title>
     <v-card-subtitle>R{{ product.price }}</v-card-subtitle>
     <v-card-actions>
-      <v-btn color="success" outlined>
+      <v-btn color="success" outlined @click="addToCart">
         <v-icon large left>mdi-plus</v-icon>
         Add to Cart</v-btn
       >
@@ -16,7 +16,11 @@
 export default {
   props: {
     product: Object,
-    addToCart: Function,
+  },
+  methods: {
+    addToCart() {
+      this.$emit('add', { itemId: this.product.id, qty: 1 });
+    },
   },
 };
 </script>
