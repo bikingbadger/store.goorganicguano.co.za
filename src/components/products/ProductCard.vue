@@ -19,7 +19,7 @@ export default {
   },
   methods: {
     addToCart() {
-      this.$emit('add', { itemId: this.product.id, qty: 1 });
+      this.$emit('add', { item: this.product, qty: 1 });
     },
   },
 };
