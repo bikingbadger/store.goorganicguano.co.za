@@ -1,8 +1,11 @@
 export default {
-  getCart(state) {
+  getCartItems(state) {
     return state.cart;
   },
   getCartCount(state) {
-    return state.cart.length();
+    return state.cart.length;
+  },
+  getCartTotal(state) {
+    return state.total;
   },
 };

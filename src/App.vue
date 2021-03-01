@@ -12,19 +12,19 @@
       >{{ getMessage }}
       <v-btn dark text @click="setVisible(false)">Close</v-btn>
     </v-snackbar>
-    <the-footer></the-footer>
+    <!-- <the-footer></the-footer> -->
   </v-app>
 </template>
 
 <script>
 import TheNavigation from '@/components/nav/TheNavigation.vue';
-import TheFooter from '@/components/nav/TheFooter.vue';
+// import TheFooter from '@/components/nav/TheFooter.vue';
 import { mapGetters, mapActions } from 'vuex';
 
 export default {
   name: 'GoOrganicsStore',
   components: {
-    TheFooter,
+    // TheFooter,
     TheNavigation,
   },
   computed: {
