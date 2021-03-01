@@ -39,7 +39,7 @@ export default {
           id: 'p5',
           image: 'https://source.unsplash.com/lNBLj4fKDFs/400x400',
           title: 'Liquid Fertilizer',
-          description: '1000 Lt Flow Bins',
+          name: '1000 Lt Flow Bins',
           price: 15000,
         },
       ],

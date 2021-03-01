@@ -1,6 +1,6 @@
 import Vue from 'vue';
 import Vuex from 'vuex';
-import createPersistedState from 'vuex-persistedstate';
+// import createPersistedState from 'vuex-persistedstate';
 
 // Modules
 import ProductsModule from './products/index.js';
@@ -11,7 +11,7 @@ Vue.use(Vuex);
 
 /* eslint-disable no-new */
 const store = new Vuex.Store({
-  plugins: [createPersistedState()],
+  // plugins: [createPersistedState()],
   modules: {
     products: ProductsModule,
     snackbar: SnackbarModule,

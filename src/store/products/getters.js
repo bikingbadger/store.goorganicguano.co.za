@@ -1,5 +1,6 @@
 export default {
-  products(state) {
+  allProducts(state) {
+    console.log(state.products);
     return state.products;
   },
   popularProducts(state) {
