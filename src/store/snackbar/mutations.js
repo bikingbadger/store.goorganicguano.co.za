@@ -1,5 +1,5 @@
 export default {
     setVisible(state,value) {
-        state.isVisible = value;
+        state.visible = value;
     }
 }

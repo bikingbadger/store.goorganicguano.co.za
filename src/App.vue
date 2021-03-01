@@ -31,9 +31,11 @@ export default {
     ...mapGetters('snackbar', ['isVisible', 'snackbarColor']),
     visible: {
       get() {
+        console.log('get visible', this.isVisible);
         return this.isVisible;
       },
       set(value) {
+        console.log('set visible', value);
         this.setVisible(value);
       },
     },
