@@ -6,8 +6,9 @@ export default {
   namespaced: true,
   state() {
     return {
-        visible: false,
-        color: 'blue'
+      visible: false,
+      color: 'success',
+      message: 'Success, item added to cart',
     };
   },
   mutations: snackbarMutations,

@@ -7,9 +7,9 @@
       :multi-line="true"
       :right="true"
       :top="true"
-      :timeout="6000"
+      :timeout="3000"
       :color="snackbarColor"
-    >
+      >{{ getMessage }}
       <v-btn dark text @click="setVisible(false)">Close</v-btn>
     </v-snackbar>
     <the-footer></the-footer>
@@ -28,14 +28,12 @@ export default {
     TheNavigation,
   },
   computed: {
-    ...mapGetters('snackbar', ['isVisible', 'snackbarColor']),
+    ...mapGetters('snackbar', ['isVisible', 'snackbarColor', 'getMessage']),
     visible: {
       get() {
-        console.log('get visible', this.isVisible);
         return this.isVisible;
       },
       set(value) {
-        console.log('set visible', value);
         this.setVisible(value);
       },
     },
