@@ -19,7 +19,7 @@ export default {
   },
   methods: {
     checkout() {
-      console.log('Checking out');
+      this.$router.push({ name: 'checkout' });
     },
   },
 };
