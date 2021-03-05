@@ -6,6 +6,6 @@ export default {
     return state.cart.length;
   },
   getCartTotal(state) {
-    return state.total;
+    return state.total.toFixed(2);
   },
 };
