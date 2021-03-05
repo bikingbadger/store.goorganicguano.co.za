@@ -9,38 +9,54 @@ export default {
       products: [
         {
           id: 'p1',
-          image: 'https://source.unsplash.com/zL21JJh2OAk/400x400',
+          image: '1liter.jpg',
           category: 'Liquid Fertilizer',
           name: '1 Lt Bottle',
           price: 30,
         },
         {
           id: 'p2',
-          image: 'https://source.unsplash.com/9OPxXGEeLTM/400x400',
+          image: '2liter.jpg',
           category: 'Liquid Fertilizer',
           name: '2 Lt Cans',
           price: 50,
         },
         {
           id: 'p3',
-          image: 'https://source.unsplash.com/ErMaQGihZvI/400x400',
+          image: '5liter.jpg',
           category: 'Liquid Fertilizer',
           name: '5 Lt Agri Cans',
           price: 100,
         },
         {
           id: 'p4',
-          image: 'https://source.unsplash.com/jg5TOGJhq5M/400x400',
+          image: '25liter.jpg',
           category: 'Liquid Fertilizer',
           name: '25 Lt Cans',
           price: 450,
         },
         {
           id: 'p5',
-          image: 'https://source.unsplash.com/lNBLj4fKDFs/400x400',
+          image: 'tote.jpg',
           category: 'Liquid Fertilizer',
           name: '1000 Lt Flow Bins',
           price: 15000,
+        },
+
+        {
+          id: 'p6',
+          image: 'tablets.jpg',
+          category: 'Tablet Fertilizer',
+          name: 'Tablets',
+          price: 3.5,
+        },
+
+        {
+          id: 'p7',
+          image: 'can.jpg',
+          category: 'Tablet Fertilizer',
+          name: 'Tube of 10',
+          price: 65,
         },
       ],
     };

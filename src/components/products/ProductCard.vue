@@ -1,6 +1,11 @@
 <template>
   <v-card outlined>
-    <v-img :src="product.image"></v-img>
+    <v-img
+      :src="require('@/assets/' + product.image)"
+      height="200"
+      contain
+      
+    ></v-img>
     <v-card-title>{{ product.name }}</v-card-title>
     <v-card-subtitle>R{{ product.price }}</v-card-subtitle>
     <v-card-actions>

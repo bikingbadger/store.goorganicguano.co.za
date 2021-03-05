@@ -16,6 +16,7 @@
     "vuex-persistedstate": "^2.5.4"
   },
   "devDependencies": {
+    "@mdi/js": "^5.9.55",
     "@vue/cli-plugin-babel": "~4.5.0",
     "@vue/cli-plugin-eslint": "~4.5.0",
     "@vue/cli-plugin-router": "~4.5.0",
