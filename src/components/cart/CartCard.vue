@@ -16,12 +16,22 @@
     </v-list-item>
     <v-card-actions>
       <v-btn
+        color="success"
+        outlined
+        small
+        class="ml-4"
+        @click="addItemToCart({ item: item, qty: 1 })"
+      >
+        <v-icon small left>mdi-plus</v-icon>
+        Add</v-btn
+      >
+      <v-btn
         color="error"
         outlined
         small
         class="ml-4"
         @click="removeItemFromCart(item.id)"
-        ><v-icon small left>mdi-minus</v-icon>Remove {{item.id}}</v-btn
+        ><v-icon small left>mdi-minus</v-icon>Remove</v-btn
       >
     </v-card-actions>
   </v-card>
@@ -38,7 +48,7 @@ export default {
     itemTotal(item) {
       return 'R' + (item.price * item.qty).toFixed(2);
     },
-    ...mapActions('cart', ['removeItemFromCart']),
+    ...mapActions('cart', ['removeItemFromCart', 'addItemToCart']),
   },
 };
 </script>
