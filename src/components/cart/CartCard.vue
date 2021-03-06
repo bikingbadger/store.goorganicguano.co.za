@@ -15,14 +15,21 @@
       ></v-list-item-avatar>
     </v-list-item>
     <v-card-actions>
-      <v-btn color="error" outlined small class="ml-4"
-        ><v-icon small left>mdi-minus</v-icon>Remove</v-btn
+      <v-btn
+        color="error"
+        outlined
+        small
+        class="ml-4"
+        @click="removeItemFromCart(item.id)"
+        ><v-icon small left>mdi-minus</v-icon>Remove {{item.id}}</v-btn
       >
     </v-card-actions>
   </v-card>
 </template>
 
 <script>
+import { mapActions } from 'vuex';
+
 export default {
   props: {
     item: Object,
@@ -31,6 +38,7 @@ export default {
     itemTotal(item) {
       return 'R' + (item.price * item.qty).toFixed(2);
     },
+    ...mapActions('cart', ['removeItemFromCart']),
   },
 };
 </script>
