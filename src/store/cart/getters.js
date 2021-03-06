@@ -8,4 +8,7 @@ export default {
   getCartTotal(state) {
     return state.total.toFixed(2);
   },
+  getItemCount(state) {
+    return state.qty;
+  }
 };
