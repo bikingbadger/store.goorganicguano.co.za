@@ -2,7 +2,7 @@
   <v-app>
     <the-navigation></the-navigation>
     <router-view />
-    <v-snackbar
+    <!-- <v-snackbar
       v-model="visible"
       :multi-line="true"
       :right="true"
@@ -11,7 +11,7 @@
       :color="snackbarColor"
       >{{ getMessage }}
       <v-btn dark text @click="setVisible(false)">Close</v-btn>
-    </v-snackbar>
+    </v-snackbar> -->
     <!-- <the-footer></the-footer> -->
   </v-app>
 </template>
