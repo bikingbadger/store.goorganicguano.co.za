@@ -1,5 +1,5 @@
 <template>
-  <v-sheet :height="sheetHeight" color="amber lighten-1">
+  <v-sheet :height="sheetHeight" color="amber darken-2">
     <v-container class="fill-height">
       <v-row align="center" justify="center">
         <h1 class="text-center display-3 hidden-xs-only">
