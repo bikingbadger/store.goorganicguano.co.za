@@ -16,10 +16,5 @@ export default {
   computed: {
     ...mapGetters('cart', ['getCartItems', 'getCartCount', 'getCartTotal']),
   },
-  methods: {
-    removeFromCart() {
-      console.log('removing');
-    },
-  },
 };
 </script>

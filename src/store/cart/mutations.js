@@ -1,7 +1,6 @@
 export default {
   addItemToCart(state, payload) {
     const itemData = payload.item;
-    console.log(itemData);
     const itemInCartIndex = state.cart.findIndex(
       (cartItem) => cartItem.id === itemData.id,
     );

@@ -75,7 +75,7 @@ export default {
       this.step -= 1;
     },
     submitOrder() {
-      console.log('Send order');
+      // TODO Send an order
     },
   },
 };
