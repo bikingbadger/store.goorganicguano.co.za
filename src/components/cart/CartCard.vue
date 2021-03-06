@@ -1,18 +1,24 @@
 <template>
   <v-card outlined min-width="100%" class="mb-4 p-4">
-    <div class="d-flex">
-      <div>
-        <v-img :src="require('@/assets/' + item.image)" width="120px" height="120px"></v-img>
-      </div>
-      <div class="d-flex flex-column justify-center align-start ">
-        <v-card-title class="pt-2">{{ item.name }}</v-card-title>
-        <v-card-subtitle>R{{ item.price }}</v-card-subtitle>
-        <v-card-text>Qty {{ item.qty }}</v-card-text>
-        <v-btn color="error" outlined small class="ml-4"
-          ><v-icon small left>mdi-minus</v-icon>Remove</v-btn
-        >
-      </div>
-    </div>
+    <v-list-item four-line>
+      <v-list-item-content>
+        <div class="overline mb-4">Qty {{ item.qty }}</div>
+        <v-list-item-title class="headline mb-1">
+          R{{ item.price }}
+        </v-list-item-title>
+        <v-list-item-subtitle>{{ item.name }}</v-list-item-subtitle>
+        <div>Total {{ itemTotal(item) }}</div>
+      </v-list-item-content>
+
+      <v-list-item-avatar tile size="80" color="grey"
+        ><v-img :src="require('@/assets/' + item.image)"></v-img
+      ></v-list-item-avatar>
+    </v-list-item>
+    <v-card-actions>
+      <v-btn color="error" outlined small class="ml-4"
+        ><v-icon small left>mdi-minus</v-icon>Remove</v-btn
+      >
+    </v-card-actions>
   </v-card>
 </template>
 
@@ -21,6 +27,10 @@ export default {
   props: {
     item: Object,
   },
-  methods: {},
+  methods: {
+    itemTotal(item) {
+      return 'R' + (item.price * item.qty).toFixed(2);
+    },
+  },
 };
 </script>

@@ -1,11 +1,11 @@
 <template>
-  <v-card outlined>
+  <div>
     <v-card-title>Checkout</v-card-title>
     <v-card-text>
       <p>Total: R{{ getCartTotal }}</p>
       <v-btn color="primary" @click="checkout">Checkout</v-btn>
     </v-card-text>
-  </v-card>
+  </div>
 </template>
 
 <script>
