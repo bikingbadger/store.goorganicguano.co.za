@@ -16,9 +16,9 @@
           </v-stepper-header>
 
           <v-stepper-items>
-            <contact-info :data="data" :rules="rules" :next="next" />
+            <contact-info :data="data.contact" :rules="rules" :next="next" />
             <shipping-info
-              :data="data"
+              :data="data.shipping"
               :rules="rules"
               :next="next"
               :previous="previous"
@@ -46,12 +46,8 @@ export default {
     return {
       step: 1,
       data: {
-        email: '',
-        name: '',
-        phone: '',
-        street: '',
-        city: '',
-        postcode: '',
+        contact: { email: '', name: '', phone: '' },
+        shipping: { street: '', city: '', postcode: '' },
       },
       rules: {
         required: (value) => !!value || 'Required.',
