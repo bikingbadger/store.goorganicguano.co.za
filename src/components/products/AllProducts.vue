@@ -25,23 +25,23 @@
 </template>
 
 <script>
-import { mapGetters, mapActions } from 'vuex';
-import ProductCard from '@/components/products/ProductCard.vue';
+import { mapGetters, mapActions } from 'vuex'
+import ProductCard from '@/components/products/ProductCard.vue'
 
 export default {
   components: {
-    ProductCard,
+    ProductCard
   },
   computed: {
-    ...mapGetters('products', ['allProducts']),
+    ...mapGetters('products', ['allProducts'])
   },
   methods: {
     ...mapActions('cart', ['addItemToCart']),
     ...mapActions('snackbar', ['setVisible']),
-    addToCart(cartItem) {
-      this.addItemToCart(cartItem);
-      this.setVisible(true);
-    },
-  },
-};
+    addToCart (cartItem) {
+      this.addItemToCart(cartItem)
+      this.setVisible(true)
+    }
+  }
+}
 </script>

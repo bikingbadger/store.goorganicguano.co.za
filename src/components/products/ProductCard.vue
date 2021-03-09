@@ -4,7 +4,7 @@
       :src="require('@/assets/' + product.image)"
       height="200"
       contain
-      
+
     ></v-img>
     <v-card-title>{{ product.name }}</v-card-title>
     <v-card-subtitle>R{{ product.price }}</v-card-subtitle>
@@ -20,12 +20,12 @@
 <script>
 export default {
   props: {
-    product: Object,
+    product: Object
   },
   methods: {
-    addToCart() {
-      this.$emit('add', { item: this.product, qty: 1 });
-    },
-  },
-};
+    addToCart () {
+      this.$emit('add', { item: this.product, qty: 1 })
+    }
+  }
+}
 </script>

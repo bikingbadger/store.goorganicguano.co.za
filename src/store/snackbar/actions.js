@@ -1,5 +1,5 @@
 export default {
-    setVisible({commit},value) {
-        commit('setVisible', value)
-    }
+  setVisible ({ commit }, value) {
+    commit('setVisible', value)
+  }
 }

@@ -26,7 +26,7 @@ module.exports = {
     next: Function,
     previous: Function,
     rules: Object,
-    data: Object,
-  },
-};
+    data: Object
+  }
+}
 </script>

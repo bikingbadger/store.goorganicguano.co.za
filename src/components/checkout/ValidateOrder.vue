@@ -28,7 +28,7 @@ export default {
   props: {
     previous: Function,
     submitOrder: Function,
-    data: Object,
-  },
-};
+    data: Object
+  }
+}
 </script>

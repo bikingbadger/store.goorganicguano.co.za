@@ -37,42 +37,42 @@
 </template>
 
 <script>
-import ContactInfo from '@/components/checkout/ContactInfo.vue';
-import ShippingInfo from '@/components/checkout/ShippingInfo.vue';
-import ValidateOrder from '@/components/checkout/ValidateOrder';
+import ContactInfo from '@/components/checkout/ContactInfo.vue'
+import ShippingInfo from '@/components/checkout/ShippingInfo.vue'
+import ValidateOrder from '@/components/checkout/ValidateOrder'
 export default {
   components: { ContactInfo, ShippingInfo, ValidateOrder },
-  data() {
+  data () {
     return {
       step: 1,
       data: {
         contact: { email: '', name: '', phone: '' },
-        shipping: { street: '', city: '', postcode: '' },
+        shipping: { street: '', city: '', postcode: '' }
       },
       rules: {
         required: (value) => !!value || 'Required.',
-        zip: (value) => value.length == 5 || 'Must be five characters',
+        zip: (value) => value.length === 5 || 'Must be five characters',
         email: (value) => {
-          const pattern = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
-          return pattern.test(value) || 'Invalid e-mail.';
+          const pattern = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
+          return pattern.test(value) || 'Invalid e-mail.'
         },
         phone: (value) => {
-          const pattern = /\d{10}/;
-          return pattern.test(value) || 'Invalid phone number.';
-        },
-      },
-    };
+          const pattern = /\d{10}/
+          return pattern.test(value) || 'Invalid phone number.'
+        }
+      }
+    }
   },
   methods: {
-    next() {
-      this.step += 1;
+    next () {
+      this.step += 1
     },
-    previous() {
-      this.step -= 1;
+    previous () {
+      this.step -= 1
     },
-    submitOrder() {
+    submitOrder () {
       // TODO Send an order
-    },
-  },
-};
+    }
+  }
+}
 </script>

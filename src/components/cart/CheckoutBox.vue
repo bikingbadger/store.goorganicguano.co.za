@@ -9,16 +9,16 @@
 </template>
 
 <script>
-import { mapGetters } from 'vuex';
+import { mapGetters } from 'vuex'
 
 export default {
   computed: {
-    ...mapGetters('cart', ['getCartTotal']),
+    ...mapGetters('cart', ['getCartTotal'])
   },
   methods: {
-    checkout() {
-      this.$router.push({ name: 'checkout' });
-    },
-  },
-};
+    checkout () {
+      this.$router.push({ name: 'checkout' })
+    }
+  }
+}
 </script>

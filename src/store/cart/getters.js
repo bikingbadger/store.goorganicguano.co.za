@@ -1,14 +1,14 @@
 export default {
-  getCartItems(state) {
-    return state.cart;
+  getCartItems (state) {
+    return state.cart
   },
-  getCartCount(state) {
-    return state.cart.length;
+  getCartCount (state) {
+    return state.cart.length
   },
-  getCartTotal(state) {
-    return state.total.toFixed(2);
+  getCartTotal (state) {
+    return state.total.toFixed(2)
   },
-  getItemCount(state) {
-    return state.qty;
+  getItemCount (state) {
+    return state.qty
   }
-};
+}

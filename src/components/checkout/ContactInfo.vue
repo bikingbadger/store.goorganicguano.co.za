@@ -31,28 +31,28 @@ export default {
   props: {
     next: Function,
     rules: Object,
-    data: Object,
+    data: Object
   },
   methods: {
-    cancel() {
-      this.$router.replace({ name: 'cart' });
+    cancel () {
+      this.$router.replace({ name: 'cart' })
     },
-    nextStep() {
-      const formEntries = Object.entries(this.data);
-      let fieldsValid = true;
+    nextStep () {
+      const formEntries = Object.entries(this.data)
+      let fieldsValid = true
       formEntries.forEach((entry) => {
-        const [inputName, inputValue] = entry;
-        const currentValue = inputValue.trim();
+        const [inputName, inputValue] = entry
+        const currentValue = inputValue.trim()
         if (currentValue.length === 0) {
-          fieldsValid = false;
+          fieldsValid = false
         }
-      });
+      })
       if (!fieldsValid) {
-        return;
+        return
       }
 
-      this.next();
-    },
-  },
-};
+      this.next()
+    }
+  }
+}
 </script>
