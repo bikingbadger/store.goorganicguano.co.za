@@ -1,6 +1,6 @@
 <template>
   <div>
-    <v-app-bar color="green darken-3" class="white--text">
+    <v-app-bar app color="green darken-3" class="white--text">
       <v-toolbar-title>Go Organic Guano</v-toolbar-title>
       <v-spacer></v-spacer>
 
@@ -54,7 +54,7 @@
 import { mapGetters } from 'vuex'
 
 export default {
-  data () {
+  data() {
     return {
       drawer: false,
       items: [

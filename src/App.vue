@@ -1,7 +1,7 @@
 <template>
   <v-app>
     <the-navigation></the-navigation>
-    <router-view />
+    <v-content><router-view /></v-content>
     <!-- <v-snackbar
       v-model="visible"
       :multi-line="true"
@@ -30,10 +30,10 @@ export default {
   computed: {
     ...mapGetters('snackbar', ['isVisible', 'snackbarColor', 'getMessage']),
     visible: {
-      get () {
+      get() {
         return this.isVisible
       },
-      set (value) {
+      set(value) {
         this.setVisible(value)
       }
     }

@@ -1,5 +1,5 @@
 export default {
-  addItemToCart (state, payload) {
+  addItemToCart(state, payload) {
     const itemData = payload.item
     const itemInCartIndex = state.cart.findIndex(
       (cartItem) => cartItem.id === itemData.id
@@ -21,7 +21,7 @@ export default {
     state.qty += payload.qty
     state.total += itemData.price * payload.qty
   },
-  removeItemFromCart (state, payload) {
+  removeItemFromCart(state, payload) {
     const itemId = payload
     const itemInCartIndex = state.cart.findIndex(
       (cartItem) => cartItem.id === itemId

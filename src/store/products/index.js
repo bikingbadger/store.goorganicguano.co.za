@@ -4,7 +4,7 @@ import productGetters from './getters'
 
 export default {
   namespaced: true,
-  state () {
+  state() {
     return {
       products: [
         {

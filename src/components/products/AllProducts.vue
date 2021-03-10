@@ -38,7 +38,7 @@ export default {
   methods: {
     ...mapActions('cart', ['addItemToCart']),
     ...mapActions('snackbar', ['setVisible']),
-    addToCart (cartItem) {
+    addToCart(cartItem) {
       this.addItemToCart(cartItem)
       this.setVisible(true)
     }

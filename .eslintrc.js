@@ -3,11 +3,12 @@ module.exports = {
   env: {
     node: true
   },
-  extends: ["plugin:vue/essential", "eslint:recommended", "@vue/standard"],
+  extends: ['plugin:vue/essential', 'eslint:recommended', '@vue/standard'],
   parserOptions: {
-    parser: "babel-eslint"
+    parser: 'babel-eslint'
   },
   rules: {
-    "no-unused-vars": ["warn", { argsIgnorePattern: "^_" }]
+    'no-unused-vars': ['warn', { argsIgnorePattern: '^_' }],
+    'space-before-function-paren': ['error', 'never']
   }
-};
+}

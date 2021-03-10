@@ -34,14 +34,14 @@ export default {
     data: Object
   },
   methods: {
-    cancel () {
+    cancel() {
       this.$router.replace({ name: 'cart' })
     },
-    nextStep () {
+    nextStep() {
       const formEntries = Object.entries(this.data)
       let fieldsValid = true
       formEntries.forEach((entry) => {
-        const [inputName, inputValue] = entry
+        const [_inputName, inputValue] = entry
         const currentValue = inputValue.trim()
         if (currentValue.length === 0) {
           fieldsValid = false

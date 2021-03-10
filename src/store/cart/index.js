@@ -4,7 +4,7 @@ import cartGetters from './getters'
 
 export default {
   namespaced: true,
-  state () {
+  state() {
     return {
       cart: [],
       qty: 0,

@@ -1,8 +1,8 @@
 export default {
-  allProducts (state) {
+  allProducts(state) {
     return state.products
   },
-  popularProducts (state) {
+  popularProducts(state) {
     return state.products.slice(0, 3)
   }
 }

@@ -45,7 +45,7 @@ export default {
     item: Object
   },
   methods: {
-    itemTotal (item) {
+    itemTotal(item) {
       return 'R' + (item.price * item.qty).toFixed(2)
     },
     ...mapActions('cart', ['removeItemFromCart', 'addItemToCart'])

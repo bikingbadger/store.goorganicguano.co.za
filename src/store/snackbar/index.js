@@ -4,7 +4,7 @@ import snackbarGetters from './getters'
 
 export default {
   namespaced: true,
-  state () {
+  state() {
     return {
       visible: false,
       color: 'success',

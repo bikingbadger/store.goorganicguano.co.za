@@ -1,11 +1,11 @@
 export default {
-  isVisible (state) {
+  isVisible(state) {
     return state.visible
   },
-  snackbarColor (state) {
+  snackbarColor(state) {
     return state.color
   },
-  getMessage (state) {
+  getMessage(state) {
     return state.message
   }
 }

@@ -23,7 +23,7 @@ export default {
     product: Object
   },
   methods: {
-    addToCart () {
+    addToCart() {
       this.$emit('add', { item: this.product, qty: 1 })
     }
   }

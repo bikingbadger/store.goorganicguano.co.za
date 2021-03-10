@@ -16,7 +16,7 @@
 <script>
 export default {
   computed: {
-    sheetHeight () {
+    sheetHeight() {
       switch (this.$vuetify.breakpoint.name) {
         case 'xs':
           return '200px'

@@ -42,7 +42,7 @@ import ShippingInfo from '@/components/checkout/ShippingInfo.vue'
 import ValidateOrder from '@/components/checkout/ValidateOrder'
 export default {
   components: { ContactInfo, ShippingInfo, ValidateOrder },
-  data () {
+  data() {
     return {
       step: 1,
       data: {
@@ -64,13 +64,13 @@ export default {
     }
   },
   methods: {
-    next () {
+    next() {
       this.step += 1
     },
-    previous () {
+    previous() {
       this.step -= 1
     },
-    submitOrder () {
+    submitOrder() {
       // TODO Send an order
     }
   }

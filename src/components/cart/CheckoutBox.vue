@@ -16,7 +16,7 @@ export default {
     ...mapGetters('cart', ['getCartTotal'])
   },
   methods: {
-    checkout () {
+    checkout() {
       this.$router.push({ name: 'checkout' })
     }
   }
