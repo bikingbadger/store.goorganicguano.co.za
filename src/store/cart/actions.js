@@ -21,6 +21,7 @@ export default {
       shipping: state.shipping,
       items: state.cart
     }
+    console.log(order)
     const createOrder = await orderRef.add(order)
     console.log(createOrder)
     commit('createOrder')

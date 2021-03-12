@@ -54,7 +54,7 @@ export default {
         return
       }
 
-      this.addContactDetails(formEntries)
+      this.addContactDetails(this.data)
 
       this.next()
     }

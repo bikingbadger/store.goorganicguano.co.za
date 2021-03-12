@@ -46,7 +46,7 @@ export default {
         return
       }
 
-      this.addShippingDetails(formEntries)
+      this.addShippingDetails(this.data)
 
       this.next()
     }
