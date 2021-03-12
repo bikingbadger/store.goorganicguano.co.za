@@ -4,5 +4,8 @@ export default {
   },
   removeItemFromCart({ commit }, itemId) {
     commit('removeItemFromCart', itemId)
+  },
+  checkout({commit}) {
+    
   }
 }
