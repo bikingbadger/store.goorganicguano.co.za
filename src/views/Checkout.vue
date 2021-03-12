@@ -40,6 +40,8 @@
 import ContactInfo from '@/components/checkout/ContactInfo.vue'
 import ShippingInfo from '@/components/checkout/ShippingInfo.vue'
 import ValidateOrder from '@/components/checkout/ValidateOrder'
+import { mapActions } from 'vuex'
+
 export default {
   components: { ContactInfo, ShippingInfo, ValidateOrder },
   data() {
@@ -50,13 +52,13 @@ export default {
         shipping: { street: '', city: '', postcode: '' }
       },
       rules: {
-        required: (value) => !!value || 'Required.',
-        zip: (value) => value.length === 5 || 'Must be five characters',
-        email: (value) => {
+        required: value => !!value || 'Required.',
+        zip: value => value.length === 5 || 'Must be five characters',
+        email: value => {
           const pattern = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
           return pattern.test(value) || 'Invalid e-mail.'
         },
-        phone: (value) => {
+        phone: value => {
           const pattern = /\d{10}/
           return pattern.test(value) || 'Invalid phone number.'
         }
@@ -64,6 +66,7 @@ export default {
     }
   },
   methods: {
+    ...mapActions('cart', ['checkout']),
     next() {
       this.step += 1
     },
@@ -71,7 +74,7 @@ export default {
       this.step -= 1
     },
     submitOrder() {
-      // TODO Send an order
+      this.checkout()
     }
   }
 }

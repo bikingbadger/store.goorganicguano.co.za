@@ -2,7 +2,7 @@ export default {
   addItemToCart(state, payload) {
     const itemData = payload.item
     const itemInCartIndex = state.cart.findIndex(
-      (cartItem) => cartItem.id === itemData.id
+      cartItem => cartItem.id === itemData.id
     )
 
     if (itemInCartIndex >= 0) {
@@ -24,11 +24,14 @@ export default {
   removeItemFromCart(state, payload) {
     const itemId = payload
     const itemInCartIndex = state.cart.findIndex(
-      (cartItem) => cartItem.id === itemId
+      cartItem => cartItem.id === itemId
     )
     const itemData = state.cart[itemInCartIndex]
     state.cart.splice(itemInCartIndex, 1)
     state.qty -= itemData.qty
     state.total -= itemData.price * itemData.qty
+  },
+  createOrder() {
+    console.log('Order placed')
   }
 }
