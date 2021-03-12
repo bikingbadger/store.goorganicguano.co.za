@@ -27,6 +27,8 @@
 </template>
 
 <script>
+import { mapActions } from 'vuex'
+
 export default {
   props: {
     next: Function,
@@ -34,13 +36,14 @@ export default {
     data: Object
   },
   methods: {
+    ...mapActions('cart', ['addContactDetails']),
     cancel() {
       this.$router.replace({ name: 'cart' })
     },
     nextStep() {
       const formEntries = Object.entries(this.data)
       let fieldsValid = true
-      formEntries.forEach((entry) => {
+      formEntries.forEach(entry => {
         const [_inputName, inputValue] = entry
         const currentValue = inputValue.trim()
         if (currentValue.length === 0) {
@@ -50,6 +53,8 @@ export default {
       if (!fieldsValid) {
         return
       }
+
+      this.addContactDetails(this.data)
 
       this.next()
     }

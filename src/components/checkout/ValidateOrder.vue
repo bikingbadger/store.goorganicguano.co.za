@@ -4,7 +4,7 @@
       Review Order
     </v-subheader>
 
-    <v-content>
+    <v-main>
       <v-row>
         <v-col>
           <v-card elevation="2" outlined>
@@ -71,7 +71,7 @@
         >
         <v-col md="2" offset="6">Total R{{ getCartTotal }}</v-col>
       </v-row>
-    </v-content>
+    </v-main>
   </v-stepper-content>
 </template>
 

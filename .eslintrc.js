@@ -8,7 +8,7 @@ module.exports = {
     parser: 'babel-eslint'
   },
   rules: {
-    'no-unused-vars': ['warn', { argsIgnorePattern: '^_' }],
+    'no-unused-vars': ['off', { argsIgnorePattern: '^_' }],
     'space-before-function-paren': ['error', 'never']
   }
 }
