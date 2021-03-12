@@ -1,6 +1,6 @@
 <template>
   <div>
-    <v-app-bar color="green" >
+    <v-app-bar app color="green darken-3" class="white--text">
       <v-toolbar-title>Go Organic Guano</v-toolbar-title>
       <v-spacer></v-spacer>
 
@@ -11,9 +11,21 @@
       </span>
 
       <v-toolbar-items class="hidden-xs-only">
-        <v-btn v-for="item in items" :key="item.title" :to="item.link" text>
+        <v-btn
+          v-for="item in items"
+          :key="item.title"
+          :to="item.link"
+          text
+          class="white--text"
+        >
           <v-icon small left>mdi-{{ item.icon }}</v-icon>
           {{ item.title }}
+          <v-badge
+            v-if="item.badge && getItemCount > 0"
+            color="green"
+            bottom
+            :content="getItemCount"
+          ></v-badge>
         </v-btn>
       </v-toolbar-items>
     </v-app-bar>
@@ -39,6 +51,8 @@
 </template>
 
 <script>
+import { mapGetters } from 'vuex'
+
 export default {
   data() {
     return {
@@ -46,9 +60,12 @@ export default {
       items: [
         { title: 'Home', link: '/', icon: 'home' },
         { title: 'Store', link: 'store', icon: 'store' },
-        { title: 'Cart', link: 'cart', icon: 'cart' },
-      ],
-    };
+        { title: 'Cart', link: 'cart', icon: 'cart', badge: true }
+      ]
+    }
   },
-};
+  computed: {
+    ...mapGetters('cart', ['getItemCount'])
+  }
+}
 </script>

@@ -8,18 +8,13 @@
 </template>
 
 <script>
-import { mapGetters } from 'vuex';
-import CartCard from '@/components/cart/CartCard.vue';
+import { mapGetters } from 'vuex'
+import CartCard from '@/components/cart/CartCard.vue'
 
 export default {
   components: { CartCard },
   computed: {
-    ...mapGetters('cart', ['getCartItems', 'getCartCount', 'getCartTotal']),
-  },
-  methods: {
-    removeFromCart() {
-      console.log('removing');
-    },
-  },
-};
+    ...mapGetters('cart', ['getCartItems', 'getCartCount', 'getCartTotal'])
+  }
+}
 </script>

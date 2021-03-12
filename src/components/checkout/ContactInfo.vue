@@ -21,7 +21,7 @@
       required
     />
 
-    <v-btn @click="next()" color="primary">Continue</v-btn>
+    <v-btn @click="nextStep()" color="primary">Continue</v-btn>
     <v-btn @click="cancel" text>Cancel</v-btn>
   </v-stepper-content>
 </template>
@@ -31,12 +31,28 @@ export default {
   props: {
     next: Function,
     rules: Object,
-    data: Object,
+    data: Object
   },
   methods: {
     cancel() {
-      this.$router.replace({ name: 'cart' });
+      this.$router.replace({ name: 'cart' })
     },
-  },
-};
+    nextStep() {
+      const formEntries = Object.entries(this.data)
+      let fieldsValid = true
+      formEntries.forEach((entry) => {
+        const [_inputName, inputValue] = entry
+        const currentValue = inputValue.trim()
+        if (currentValue.length === 0) {
+          fieldsValid = false
+        }
+      })
+      if (!fieldsValid) {
+        return
+      }
+
+      this.next()
+    }
+  }
+}
 </script>

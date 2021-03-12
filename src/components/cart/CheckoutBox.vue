@@ -1,24 +1,24 @@
 <template>
-  <v-card outlined>
+  <div>
     <v-card-title>Checkout</v-card-title>
     <v-card-text>
       <p>Total: R{{ getCartTotal }}</p>
       <v-btn color="primary" @click="checkout">Checkout</v-btn>
     </v-card-text>
-  </v-card>
+  </div>
 </template>
 
 <script>
-import { mapGetters } from 'vuex';
+import { mapGetters } from 'vuex'
 
 export default {
   computed: {
-    ...mapGetters('cart', ['getCartTotal']),
+    ...mapGetters('cart', ['getCartTotal'])
   },
   methods: {
     checkout() {
-      this.$router.push({ name: 'checkout' });
-    },
-  },
-};
+      this.$router.push({ name: 'checkout' })
+    }
+  }
+}
 </script>

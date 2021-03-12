@@ -1,6 +1,6 @@
-import snackbarMutations from './mutations.js';
-import snackbarActions from './actions';
-import snackbarGetters from './getters';
+import snackbarMutations from './mutations.js'
+import snackbarActions from './actions'
+import snackbarGetters from './getters'
 
 export default {
   namespaced: true,
@@ -8,10 +8,10 @@ export default {
     return {
       visible: false,
       color: 'success',
-      message: 'Success, item added to cart',
-    };
+      message: 'Success, item added to cart'
+    }
   },
   mutations: snackbarMutations,
   actions: snackbarActions,
-  getters: snackbarGetters,
-};
+  getters: snackbarGetters
+}
