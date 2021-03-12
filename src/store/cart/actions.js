@@ -6,13 +6,19 @@ export default {
   addItemToCart({ commit }, item) {
     commit('addItemToCart', item)
   },
+  addContactDetails({ commit }, contact) {
+    commit('addContactDetails', contact)
+  },
+  addShippingDetails({ commit }, contact) {
+    commit('addShippingDetails', contact)
+  },
   removeItemFromCart({ commit }, itemId) {
     commit('removeItemFromCart', itemId)
   },
   async checkout({ state, commit }) {
     const order = {
-      contact: state.contactDetails,
-      shipping: state.shippingDetails,
+      contact: state.contact,
+      shipping: state.shipping,
       items: state.cart
     }
     const createOrder = await orderRef.add(order)

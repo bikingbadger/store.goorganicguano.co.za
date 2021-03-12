@@ -1,7 +1,7 @@
 <template>
   <v-app>
     <the-navigation></the-navigation>
-    <v-content><router-view /></v-content>
+    <v-main><router-view /></v-main>
     <!-- <v-snackbar
       v-model="visible"
       :multi-line="true"

@@ -21,6 +21,14 @@ export default {
     state.qty += payload.qty
     state.total += itemData.price * payload.qty
   },
+  addContactDetails(state, payload) {
+    const contact = payload
+    state.contact = contact
+  },
+  addShippingDetails(state, payload) {
+    const shipping = payload
+    state.shipping = shipping
+  },
   removeItemFromCart(state, payload) {
     const itemId = payload
     const itemInCartIndex = state.cart.findIndex(

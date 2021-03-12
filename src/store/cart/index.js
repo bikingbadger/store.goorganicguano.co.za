@@ -9,8 +9,8 @@ export default {
       cart: [],
       qty: 0,
       total: 0,
-      contactDetails: {},
-      shippingDetails: {}
+      contact: {},
+      shipping: {}
     }
   },
   mutations: cartMutations,

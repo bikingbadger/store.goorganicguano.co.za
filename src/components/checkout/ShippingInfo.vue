@@ -11,7 +11,7 @@
       required
     />
 
-    <v-btn color="primary" @click="next">
+    <v-btn color="primary" @click="nextStep">
       Continue
     </v-btn>
     <v-btn text @click="previous">
@@ -21,12 +21,35 @@
 </template>
 
 <script>
-module.exports = {
+import { mapActions } from 'vuex'
+
+export default {
   props: {
     next: Function,
     previous: Function,
     rules: Object,
     data: Object
+  },
+  methods: {
+    ...mapActions('cart', ['addShippingDetails']),
+    nextStep() {
+      const formEntries = Object.entries(this.data)
+      let fieldsValid = true
+      formEntries.forEach(entry => {
+        const [_inputName, inputValue] = entry
+        const currentValue = inputValue.trim()
+        if (currentValue.length === 0) {
+          fieldsValid = false
+        }
+      })
+      if (!fieldsValid) {
+        return
+      }
+
+      this.addShippingDetails(formEntries)
+
+      this.next()
+    }
   }
 }
 </script>
