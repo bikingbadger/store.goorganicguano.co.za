@@ -95,10 +95,11 @@ export default {
         })
       })
         .then(() => {
-          this.$router.push('thanks')
+          this.$router.push('thankyou')
         })
-        .catch(() => {
-          this.$router.push('404')
+        .catch(err => {
+          console.log(err)
+          // this.$router.push('404')
         })
     }
   }
