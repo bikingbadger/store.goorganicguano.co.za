@@ -40,7 +40,7 @@
 import ContactInfo from '@/components/checkout/ContactInfo.vue'
 import ShippingInfo from '@/components/checkout/ShippingInfo.vue'
 import ValidateOrder from '@/components/checkout/ValidateOrder'
-import { mapActions } from 'vuex'
+import { mapActions, mapGetters } from 'vuex'
 
 export default {
   components: { ContactInfo, ShippingInfo, ValidateOrder },
@@ -65,6 +65,10 @@ export default {
       }
     }
   },
+
+  computed: {
+    ...mapGetters('cart', ['getCartItems', 'getCartCount', 'getCartTotal'])
+  },
   methods: {
     ...mapActions('cart', ['checkout']),
     next() {
@@ -73,8 +77,29 @@ export default {
     previous() {
       this.step -= 1
     },
-    submitOrder() {
-      this.checkout()
+    encode(data) {
+      return Object.keys(data)
+        .map(
+          key => `${encodeURIComponent(key)}=${encodeURIComponent(data[key])}`
+        )
+        .join('&')
+    },
+    async submitOrder() {
+      await fetch('/', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+        body: this.encode({
+          'form-name': 'order',
+          contact: { ...this.data },
+          items: { ...this.getCartItems }
+        })
+      })
+        .then(() => {
+          this.$router.push('thanks')
+        })
+        .catch(() => {
+          this.$router.push('404')
+        })
     }
   }
 }
