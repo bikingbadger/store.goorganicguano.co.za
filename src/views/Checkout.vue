@@ -89,7 +89,7 @@ export default {
         await fetch('/.netlify/functions/sendgrid', {
           method: 'POST',
           message: {
-            'form-name': 'order',
+            'form-name': 'order'
             // contact: { ...this.data },
             // items: { ...this.getCartItems }
           }
