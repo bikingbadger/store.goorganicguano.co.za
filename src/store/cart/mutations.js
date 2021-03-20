@@ -1,12 +1,10 @@
 export default {
   addItemToCart(state, payload) {
-    const itemData = payload.item
-    const itemInCartIndex = state.cart.findIndex(
-      cartItem => cartItem.id === itemData.id
-    )
+    const itemData = payload.item;
+    const itemInCartIndex = state.cart.findIndex((cartItem) => cartItem.id === itemData.id);
 
     if (itemInCartIndex >= 0) {
-      state.cart[itemInCartIndex].qty += payload.qty
+      state.cart[itemInCartIndex].qty += payload.qty;
     } else {
       const newItem = {
         id: itemData.id,
@@ -14,32 +12,30 @@ export default {
         category: itemData.category,
         name: itemData.name,
         price: itemData.price,
-        qty: 1
-      }
-      state.cart.push(newItem)
+        qty: 1,
+      };
+      state.cart.push(newItem);
     }
-    state.qty += payload.qty
-    state.total += itemData.price * payload.qty
+    state.qty += payload.qty;
+    state.total += itemData.price * payload.qty;
   },
   addContactDetails(state, payload) {
-    const contact = payload
-    state.contact = contact
+    const contact = payload;
+    state.contact = contact;
   },
   addShippingDetails(state, payload) {
-    const shipping = payload
-    state.shipping = shipping
+    const shipping = payload;
+    state.shipping = shipping;
   },
   removeItemFromCart(state, payload) {
-    const itemId = payload
-    const itemInCartIndex = state.cart.findIndex(
-      cartItem => cartItem.id === itemId
-    )
-    const itemData = state.cart[itemInCartIndex]
-    state.cart.splice(itemInCartIndex, 1)
-    state.qty -= itemData.qty
-    state.total -= itemData.price * itemData.qty
+    const itemId = payload;
+    const itemInCartIndex = state.cart.findIndex((cartItem) => cartItem.id === itemId);
+    const itemData = state.cart[itemInCartIndex];
+    state.cart.splice(itemInCartIndex, 1);
+    state.qty -= itemData.qty;
+    state.total -= itemData.price * itemData.qty;
   },
   createOrder() {
-    console.log('Order placed')
-  }
-}
+    // console.log('Order placed');
+  },
+};

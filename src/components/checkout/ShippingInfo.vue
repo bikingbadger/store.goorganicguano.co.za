@@ -21,35 +21,35 @@
 </template>
 
 <script>
-import { mapActions } from 'vuex'
+import { mapActions } from 'vuex';
 
 export default {
   props: {
     next: Function,
     previous: Function,
     rules: Object,
-    data: Object
+    data: Object,
   },
   methods: {
     ...mapActions('cart', ['addShippingDetails']),
     nextStep() {
-      const formEntries = Object.entries(this.data)
-      let fieldsValid = true
-      formEntries.forEach(entry => {
-        const [_inputName, inputValue] = entry
-        const currentValue = inputValue.trim()
+      const formEntries = Object.entries(this.data);
+      let fieldsValid = true;
+      formEntries.forEach((entry) => {
+        const [_inputName, inputValue] = entry;
+        const currentValue = inputValue.trim();
         if (currentValue.length === 0) {
-          fieldsValid = false
+          fieldsValid = false;
         }
-      })
+      });
       if (!fieldsValid) {
-        return
+        return;
       }
 
-      this.addShippingDetails(this.data)
+      this.addShippingDetails(this.data);
 
-      this.next()
-    }
-  }
-}
+      this.next();
+    },
+  },
+};
 </script>

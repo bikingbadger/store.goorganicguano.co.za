@@ -3,9 +3,9 @@ module.exports = {
     proxy: {
       '/.netlify': {
         target: 'http://localhost:9000',
-        pathRewrite: { '^/.netlify/functions': '' }
-      }
-    }
+        pathRewrite: { '^/.netlify/functions': '' },
+      },
+    },
   },
-  transpileDependencies: ['vuetify']
-}
+  transpileDependencies: ['vuetify'],
+};

@@ -12,10 +12,10 @@
 </template>
 
 <script>
-import CartList from '@/components/cart/CartList.vue'
-import CheckoutBox from '@/components/cart/CheckoutBox.vue'
+import CartList from '@/components/cart/CartList.vue';
+import CheckoutBox from '@/components/cart/CheckoutBox.vue';
 
 export default {
-  components: { CartList, CheckoutBox }
-}
+  components: { CartList, CheckoutBox },
+};
 </script>

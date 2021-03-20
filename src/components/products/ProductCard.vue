@@ -20,12 +20,12 @@
 <script>
 export default {
   props: {
-    product: Object
+    product: Object,
   },
   methods: {
     addToCart() {
-      this.$emit('add', { item: this.product, qty: 1 })
-    }
-  }
-}
+      this.$emit('add', { item: this.product, qty: 1 });
+    },
+  },
+};
 </script>

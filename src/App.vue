@@ -17,29 +17,29 @@
 </template>
 
 <script>
-import TheNavigation from '@/components/nav/TheNavigation.vue'
-import TheFooter from '@/components/nav/TheFooter.vue'
-import { mapGetters, mapActions } from 'vuex'
+import TheNavigation from '@/components/nav/TheNavigation.vue';
+import TheFooter from '@/components/nav/TheFooter.vue';
+import { mapGetters, mapActions } from 'vuex';
 
 export default {
   name: 'GoOrganicsStore',
   components: {
     TheFooter,
-    TheNavigation
+    TheNavigation,
   },
   computed: {
     ...mapGetters('snackbar', ['isVisible', 'snackbarColor', 'getMessage']),
     visible: {
       get() {
-        return this.isVisible
+        return this.isVisible;
       },
       set(value) {
-        this.setVisible(value)
-      }
-    }
+        this.setVisible(value);
+      },
+    },
   },
   methods: {
-    ...mapActions('snackbar', ['setVisible'])
-  }
-}
+    ...mapActions('snackbar', ['setVisible']),
+  },
+};
 </script>

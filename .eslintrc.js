@@ -1,14 +1,17 @@
 module.exports = {
   root: true,
+
   env: {
-    node: true
+    node: true,
   },
-  extends: ['plugin:vue/essential', 'eslint:recommended', '@vue/standard'],
+
+  extends: ['plugin:vue/essential', 'eslint:recommended', '@vue/airbnb'],
+
   parserOptions: {
-    parser: 'babel-eslint'
+    parser: 'babel-eslint',
   },
+
   rules: {
     'no-unused-vars': ['off', { argsIgnorePattern: '^_' }],
-    'space-before-function-paren': ['error', 'never']
-  }
-}
+  },
+};

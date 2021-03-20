@@ -1,10 +1,10 @@
-import Vue from 'vue'
-import Vuetify from 'vuetify/lib/framework'
+import Vue from 'vue';
+import Vuetify from 'vuetify/lib/framework';
 
-Vue.use(Vuetify)
+Vue.use(Vuetify);
 
 export default new Vuetify({
   icons: {
-    iconfont: 'mdiSvg' // 'fa',  'mdi' || 'mdiSvg' || 'md' || 'fa' || 'fa4' || 'faSvg'
-  }
-})
+    iconfont: 'mdiSvg', // 'fa',  'mdi' || 'mdiSvg' || 'md' || 'fa' || 'fa4' || 'faSvg'
+  },
+});
