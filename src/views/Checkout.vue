@@ -1,5 +1,6 @@
 <template>
   <v-container>
+    <v-btn @click="submitOrder">Test</v-btn>
     <v-row>
       <v-col sm="6" offset="3">
         <v-stepper v-model="step">
@@ -37,6 +38,7 @@
 </template>
 
 <script>
+import axios from 'axios'
 import ContactInfo from '@/components/checkout/ContactInfo.vue'
 import ShippingInfo from '@/components/checkout/ShippingInfo.vue'
 import ValidateOrder from '@/components/checkout/ValidateOrder'
@@ -77,24 +79,17 @@ export default {
     previous() {
       this.step -= 1
     },
-    encode(data) {
-      return Object.keys(data)
-        .map(
-          key => `${encodeURIComponent(key)}=${encodeURIComponent(data[key])}`
-        )
-        .join('&')
-    },
     async submitOrder() {
       try {
-        await fetch('/.netlify/functions/sendgrid', {
-          method: 'POST',
-          message: {
-            'form-name': 'order'
-            // contact: { ...this.data },
-            // items: { ...this.getCartItems }
+        await axios.post('/.netlify/functions/sendgrid', {
+          body: {
+            'form-name': 'order',
+            contact: { ...this.data },
+            items: { ...this.getCartItems }
           }
         })
-        alert('Thank you, your message was sent successfully!')
+        // alert('Thank you, your message was sent successfully!')
+        this.$router.push('/thank-you')
       } catch (e) {
         console.error(e)
         alert('Error:  Your message could not be sent')

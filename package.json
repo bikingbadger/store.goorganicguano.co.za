@@ -4,13 +4,17 @@
   "private": true,
   "scripts": {
     "serve": "vue-cli-service serve",
+    "netlify": "netlify-lambda serve functions --config ./webpack.functions.js",
     "build": "vue-cli-service build",
     "lint": "vue-cli-service lint"
   },
   "dependencies": {
     "@sendgrid/mail": "^7.4.2",
+    "axios": "^0.21.1",
     "core-js": "^3.6.5",
+    "dotenv-webpack": "^7.0.2",
     "firebase": "^8.3.0",
+    "netlify-lambda": "^2.0.3",
     "vue": "^2.6.11",
     "vue-router": "^3.2.0",
     "vuetify": "^2.4.0",
