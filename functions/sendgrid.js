@@ -39,7 +39,8 @@ function sendEmail(client, message, senderEmail, senderName) {
         email: senderEmail,
         name: senderName
       },
-      to: 'office@goorganicguano.co.za,sales@goorganicguano.co.za',
+      to: 'sales@goorganicguano.co.za',
+      cc: 'office@goorganicguano.co.za',
       subject: 'New ' + message.body['form-name'],
       //text: message.body
       html: html
