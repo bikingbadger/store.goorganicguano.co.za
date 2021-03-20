@@ -85,22 +85,28 @@ export default {
         .join('&')
     },
     async submitOrder() {
-      await fetch('/', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-        body: this.encode({
-          'form-name': 'order',
-          contact: { ...this.data },
-          items: { ...this.getCartItems }
+      try {
+        await fetch('/.netlify/functions/sendgrid', {
+          method: 'POST',
+          message: {
+            'form-name': 'order',
+            contact: { ...this.data },
+            items: { ...this.getCartItems }
+          }
         })
-      })
-        .then(() => {
-          this.$router.push('thankyou')
-        })
-        .catch(err => {
-          console.log(err)
-          // this.$router.push('404')
-        })
+        alert('Thank you, your message was sent successfully!')
+      } catch (e) {
+        console.error(e)
+        alert('Error:  Your message could not be sent')
+      }
+      // })
+      //   .then(() => {
+      //     this.$router.push('thankyou')
+      //   })
+      //   .catch(err => {
+      //     console.log(err)
+      //     // this.$router.push('404')
+      //   })
     }
   }
 }
