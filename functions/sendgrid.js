@@ -2,14 +2,17 @@ const client = require('@sendgrid/mail')
 
 function sendEmail(client, message, senderEmail, senderName) {
   return new Promise((fulfill, reject) => {
+    console.log(message)
+
     const data = {
       from: {
         email: senderEmail,
         name: senderName
       },
-      subject: 'Netlify Function - Sendgrid Email',
-      to: 'your.email@here.com',
-      html: `Hey, you\'ve sent an email from Netlify Functions<br/>Message: ${message}`
+      to: 'office@goorganicguano.co.za',
+      subject: 'Sending with SendGrid is Fun',
+      text: 'and easy to do anywhere, even with Node.js',
+      html: '<strong>and easy to do anywhere, even with Node.js</strong>'
     }
 
     client

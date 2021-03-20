@@ -90,8 +90,8 @@ export default {
           method: 'POST',
           message: {
             'form-name': 'order',
-            contact: { ...this.data },
-            items: { ...this.getCartItems }
+            // contact: { ...this.data },
+            // items: { ...this.getCartItems }
           }
         })
         alert('Thank you, your message was sent successfully!')
