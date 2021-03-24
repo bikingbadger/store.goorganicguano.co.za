@@ -1,6 +1,6 @@
-import cartMutations from './mutations.js'
-import cartActions from './actions'
-import cartGetters from './getters'
+import cartMutations from './mutations';
+import cartActions from './actions';
+import cartGetters from './getters';
 
 export default {
   namespaced: true,
@@ -10,10 +10,10 @@ export default {
       qty: 0,
       total: 0,
       contact: {},
-      shipping: {}
-    }
+      shipping: {},
+    };
   },
   mutations: cartMutations,
   actions: cartActions,
-  getters: cartGetters
-}
+  getters: cartGetters,
+};

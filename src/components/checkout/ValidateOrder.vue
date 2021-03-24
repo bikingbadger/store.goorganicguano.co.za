@@ -76,16 +76,16 @@
 </template>
 
 <script>
-import { mapGetters } from 'vuex'
+import { mapGetters } from 'vuex';
 
 export default {
   props: {
     previous: Function,
     submitOrder: Function,
-    data: Object
+    data: Object,
   },
   computed: {
-    ...mapGetters('cart', ['getCartItems', 'getCartCount', 'getCartTotal'])
-  }
-}
+    ...mapGetters('cart', ['getCartItems', 'getCartCount', 'getCartTotal']),
+  },
+};
 </script>

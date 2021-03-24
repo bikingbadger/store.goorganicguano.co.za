@@ -38,17 +38,17 @@
 </template>
 
 <script>
-import { mapActions } from 'vuex'
+import { mapActions } from 'vuex';
 
 export default {
   props: {
-    item: Object
+    item: Object,
   },
   methods: {
     itemTotal(item) {
-      return 'R' + (item.price * item.qty).toFixed(2)
+      return `R${(item.price * item.qty).toFixed(2)}`;
     },
-    ...mapActions('cart', ['removeItemFromCart', 'addItemToCart'])
-  }
-}
+    ...mapActions('cart', ['removeItemFromCart', 'addItemToCart']),
+  },
+};
 </script>

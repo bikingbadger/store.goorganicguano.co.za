@@ -51,7 +51,7 @@
 </template>
 
 <script>
-import { mapGetters } from 'vuex'
+import { mapGetters } from 'vuex';
 
 export default {
   data() {
@@ -60,12 +60,14 @@ export default {
       items: [
         { title: 'Home', link: '/', icon: 'home' },
         { title: 'Store', link: 'store', icon: 'store' },
-        { title: 'Cart', link: 'cart', icon: 'cart', badge: true }
-      ]
-    }
+        {
+          title: 'Cart', link: 'cart', icon: 'cart', badge: true,
+        },
+      ],
+    };
   },
   computed: {
-    ...mapGetters('cart', ['getItemCount'])
-  }
-}
+    ...mapGetters('cart', ['getItemCount']),
+  },
+};
 </script>

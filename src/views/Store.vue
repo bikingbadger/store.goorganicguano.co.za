@@ -3,9 +3,9 @@
 </template>
 
 <script>
-import AllProducts from '@/components/products/AllProducts'
+import AllProducts from '@/components/products/AllProducts.vue';
 
 export default {
-  components: { AllProducts }
-}
+  components: { AllProducts },
+};
 </script>

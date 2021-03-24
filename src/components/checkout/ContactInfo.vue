@@ -27,37 +27,37 @@
 </template>
 
 <script>
-import { mapActions } from 'vuex'
+import { mapActions } from 'vuex';
 
 export default {
   props: {
     next: Function,
     rules: Object,
-    data: Object
+    data: Object,
   },
   methods: {
     ...mapActions('cart', ['addContactDetails']),
     cancel() {
-      this.$router.replace({ name: 'cart' })
+      this.$router.replace({ name: 'cart' });
     },
     nextStep() {
-      const formEntries = Object.entries(this.data)
-      let fieldsValid = true
-      formEntries.forEach(entry => {
-        const [_inputName, inputValue] = entry
-        const currentValue = inputValue.trim()
+      const formEntries = Object.entries(this.data);
+      let fieldsValid = true;
+      formEntries.forEach((entry) => {
+        const [_inputName, inputValue] = entry;
+        const currentValue = inputValue.trim();
         if (currentValue.length === 0) {
-          fieldsValid = false
+          fieldsValid = false;
         }
-      })
+      });
       if (!fieldsValid) {
-        return
+        return;
       }
 
-      this.addContactDetails(this.data)
+      this.addContactDetails(this.data);
 
-      this.next()
-    }
-  }
-}
+      this.next();
+    },
+  },
+};
 </script>
