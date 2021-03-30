@@ -1,6 +1,5 @@
 <template>
   <v-container>
-    <v-btn @click="submitOrder">Test</v-btn>
     <v-row>
       <v-col sm="6" offset="3">
         <v-stepper v-model="step">
